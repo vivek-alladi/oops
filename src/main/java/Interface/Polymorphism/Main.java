@@ -1,4 +1,4 @@
-package Abstraction.Interface;
+package Interface.Polymorphism;
 
 
 interface Shape {
@@ -31,16 +31,25 @@ class Rectangle implements Shape {
     }
 }
 
+class random {
+
+    public void someMethod(Shape shape){
+        double area = shape.getArea();
+        System.out.println(area);
+    }
+
+}
 
 public class Main {
     public static void main(String[] args) {
         Shape circle = new Circle(5.0);
         Shape rectangle = new Rectangle(2.0, 3.0);
 
-        double circleArea = circle.getArea();
-        double rectangleArea = rectangle.getArea();
-        System.out.println(circleArea);
-        System.out.println(rectangleArea);
+
+        random someObject = new random();
+        someObject.someMethod(circle);
+        someObject.someMethod(rectangle);
+
 
     }
 }
